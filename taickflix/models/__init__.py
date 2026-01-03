@@ -1,1 +1,0 @@
-from taickflix.models.cliente_model import Cliente
