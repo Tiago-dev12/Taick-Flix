@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taick Flix | Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field.label_tag }}
+                {{ field }}
+                {% for error in field.errors %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
