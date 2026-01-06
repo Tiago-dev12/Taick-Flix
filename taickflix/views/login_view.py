@@ -24,5 +24,6 @@ def login_view(request):
                 return render(request, 'login.html', {'form' : form})
     else:
         form = LoginForm()
+        print(request)
 
     return render(request, 'login.html', {'form': form})    
