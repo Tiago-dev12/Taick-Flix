@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import check_password
-from taickflix.forms.login_form import LoginForm
+from taickflix.forms import LoginForm
 from taickflix.models.cliente_model import Cliente
 
 def login_view(request):
