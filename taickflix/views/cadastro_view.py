@@ -1,3 +1,5 @@
+from django.core.signing import TimestampSigner, BadSignature, SignatureExpired
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from taickflix.models import Cliente
 from taickflix.forms  import CadastroForm
@@ -23,7 +25,26 @@ def cadastro_view(request):
             if senha != confirmar_senha:
                 form.add_error('confirmar_senha', 'As senhas precisam ser iguais')
 
-            
+            if not form.errors:
+                usuario = Cliente(
+                    nome = nome,
+                    data_nascimento = data_nascimento,
+                    telefone = telefone,
+                    email = email,
+                    senha = senha
+                )
+                usuario.save()
+
+                signer = TimestampSigner()
+                token = signer.sign(email)
+                link = f'http://127.0.0.1:8000/confirmar-email/?token={token}'
+
+                send_mail(
+                    'Confirme seu email para se cadastrar na TaickFlix',
+                    f"Clique neste link para confirmar: \n{link}",
+                    'no-reply@taickflix.com',
+                    [email],
+                )
 
     else:
         form = CadastroForm()

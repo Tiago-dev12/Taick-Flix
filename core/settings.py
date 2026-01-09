@@ -103,7 +103,16 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django_password_validators.password_character_requirements.password_validation.PasswordCharacterValidator",
     },
 ]
-
+# Configurações do mailtrap
+# Looking to send emails in production? Check out our Email API/SMTP product!
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a5acb384063c44'
+EMAIL_HOST_PASSWORD = '895f479380e4fb'
+EMAIL_PORT = '2525'
+DEFAULT_FROM_EMAIL = 'no-reply@taickflix.com'
+EMAIL_USE_TLS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
