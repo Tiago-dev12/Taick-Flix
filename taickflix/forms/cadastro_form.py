@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.password_validation import validate_password
+from taickflix.validators import validate_password_ptbr
 from django.core.exceptions import ValidationError
 from taickflix.models.cliente_model import Cliente
 from phonenumber_field.formfields import PhoneNumberField
@@ -18,7 +18,7 @@ class CadastroForm(forms.Form):
 
         if senha:
             try:
-                validate_password(senha)
+                validate_password_ptbr(senha)
             except ValidationError as e:
                 self.add_error('senha', e)
         

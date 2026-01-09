@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from taickflix.models import Cliente
-from taickflix.forms import CadastroForm
+from taickflix.forms  import CadastroForm
 
 def cadastro_view(request):
     if request.method == 'POST':
@@ -22,6 +22,8 @@ def cadastro_view(request):
             
             if senha != confirmar_senha:
                 form.add_error('confirmar_senha', 'As senhas precisam ser iguais')
+
+            
 
     else:
         form = CadastroForm()
