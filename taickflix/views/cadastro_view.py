@@ -46,7 +46,7 @@ def cadastro_view(request):
                     'no-reply@taickflix.com',
                     [email],
                 )
-
+                return render(request, 'aviso_confirmacao.html')
     else:
         form = CadastroForm()
 
