@@ -16,7 +16,7 @@ def validate_password_ptbr(password):
         for msg in e.messages:
             match msg:
                 case texto if 'short' in texto:
-                    msg = f'Esta senha é muito curta, ela deve conter pelo menos 8 dígitos'
+                    msg = f'A senha deve conter pelo menos 8 dígitos'
                 case texto if 'letter' in texto and not 'upper' in texto and not 'lower' in texto:
                     msg = f'A senha deve conter pelo menos 1 letra'
                 case texto if 'digit' in texto:

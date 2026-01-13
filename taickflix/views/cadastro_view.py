@@ -1,4 +1,5 @@
 from django.core.signing import TimestampSigner, BadSignature, SignatureExpired
+from django.contrib.auth.hashers import make_password
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from taickflix.models import Cliente
@@ -31,7 +32,7 @@ def cadastro_view(request):
                     data_nascimento = data_nascimento,
                     telefone = telefone,
                     email = email,
-                    senha = senha
+                    senha = make_password(senha)
                 )
                 usuario.save()
 

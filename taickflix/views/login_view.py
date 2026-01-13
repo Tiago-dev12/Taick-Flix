@@ -16,7 +16,7 @@ def login_view(request):
                 form.add_error('email', 'Usuário não cadastrado')
                 return render(request, 'login.html', {'form' : form})
 
-            if senha == cliente.senha:
+            if check_password(senha, cliente.senha): 
                 request.session['cliente_id'] = cliente.id
                 return redirect('Home')
             else:
