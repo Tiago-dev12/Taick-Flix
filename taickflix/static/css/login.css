@@ -1,0 +1,126 @@
+@import url(fonts.css);
+
+:root{
+    --img-fundo: url('../img/fundo-login.jpg');
+    --fonte-texto: 'Montserrat';
+    --verde-escuro: #00B89F;
+    --verde-claro: #50FFB1;
+    --verde-claro-transp: #3faa7a;
+    --cinza-claro: #c2c2c2;
+    --vermelho-erro: #ff4756;
+}
+
+body{
+    background-image: var(--img-fundo);
+    color: white;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-texto);
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Zalando Sans Expanded';
+    margin-bottom: 0.5em;
+}
+
+.caixa-login{
+    background: rgba(0, 0, 0, 0.192);
+    width: 20%;
+    display: block;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+form, input{
+    background: transparent;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: end;
+    height: 4em;
+    margin-bottom: 0.5em;
+}
+
+label{
+    font-size: 18px;
+    margin-bottom: 5px;
+    position: absolute;
+    align-self: self-start;
+    transition: 50ms;
+    color: var(--cinza-claro);
+}
+
+.label-ativo{
+    margin-bottom: 1.7em;
+    font-size: 15px;
+}
+
+input {
+    font-size: 16px;
+    font-family: var(--fonte-texto);
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    border: none;
+    border-bottom: 1px solid var(--verde-claro-transp);
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    color: #fff;
+    background: transparent !important;
+    font-size: 16px;
+    font-family: var(--fonte-texto);
+    padding: 0.2em;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.msg-erro{
+    color: var(--vermelho-erro);
+}
+
+button{
+    background: transparent;
+    color: var(--verde-claro);
+    font-size: 18px;
+    font-family: var(--fonte-texto);
+    display: block;
+    width: 100%;
+    border: 1px solid var(--verde-claro);
+    border-radius: 20px;
+    line-height: 1.5em;
+    margin: 3em auto 2em auto;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background-color: var(--verde-claro);
+    color: black;
+    box-shadow: 0px 0px 5px var(--verde-claro);
+    font-weight: bold;
+}
+
+p, a{
+    font-size: 14px;
+}
+
+a{
+    color: var(--verde-claro);
+    text-decoration: none;
+}

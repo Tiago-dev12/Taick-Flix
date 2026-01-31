@@ -5,26 +5,28 @@
 <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taick Flix | Login</title>
+    <title>TaickFlix | Login</title>
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+    <script src="{% static 'js/form.js' %}" defer></script>
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {% for field in form %}
-            <div>
-                {{ field.label_tag }}
-                {{ field }}
+    <h1>Entrar</h1>
+    <div class="caixa-login">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="campo">
+                    {{ field }}
+                    {{ field.label_tag }}
+                </div>
                 {% for error in field.errors %}
-                    <p style="color: red;">{{ error }}</p>
+                    <p class="msg-erro">{{ error }}</p>
                 {% endfor %}
-            </div>
-        {% endfor %}
-        <button type="submit">Entrar</button>
-        <p>Ainda não possui uma conta? clique abaixo para se cadastrar</p>
-        <a href="{% url 'Cadastro' %}">Criar conta</a>
-    </form>
+            {% endfor %}
+            <button type="submit">Entrar</button>
+            <p>Ainda não possui uma conta? clique <a href="{% url 'Cadastro' %}">aqui</a> para se cadastrar</p>
+        </form>
+    </div>
 </body>
 </html>
