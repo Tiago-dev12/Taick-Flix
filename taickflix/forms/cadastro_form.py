@@ -6,7 +6,7 @@ from phonenumber_field.formfields import PhoneNumberField
 
 class CadastroForm(forms.Form):
     nome = forms.CharField(max_length=50, label='Nome')
-    data_nascimento = forms.DateField(label='Dada de nascimento')
+    data_nascimento = forms.DateField(label='Dada de nascimento', widget=forms.DateInput(attrs={'type': 'date'}))
     telefone = PhoneNumberField(region='BR')
     email = forms.EmailField(label='E-mail')
     senha = forms.CharField(label='Senha', widget=forms.PasswordInput)
