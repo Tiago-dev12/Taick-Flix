@@ -11,19 +11,21 @@
 </head>
 <body>
     <h1>Cadastro</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {% for field in form %}
-            <div>
-                {{ field.label_tag }}
-                {{ field }}
+    <div class="caixa-form">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="campo">
+                    {{ field }}
+                    {{ field.label_tag }}
+                </div>
                 {% for error in field.errors %}
-                    <p style="color: red;">{{ error }}</p>
+                    <p class="msg-erro">{{ error }}</p>
                 {% endfor %}
-            </div>
-        {% endfor %}
-        <button type="submit">Cadastrar</button>
-    </form>
+            {% endfor %}
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
     <p>Já possui uma conta?</a>
     <a href="{% url 'Login' %}">Entrar</a>
 </body>
