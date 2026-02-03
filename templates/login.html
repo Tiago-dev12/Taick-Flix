@@ -5,13 +5,13 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaickFlix | Login</title>
-    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
     <script src="{% static 'js/form.js' %}" defer></script>
 </head>
 <body>
     <h1>Entrar</h1>
-    <div class="caixa-login">
+    <div class="caixa-form">
         <form method="POST">
             {% csrf_token %}
             {% for field in form %}
