@@ -1,2 +1,28 @@
-<h1>Home</h1>
-<a href="{% url 'Logout' %}">Sair</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taick Flix | Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="{% static 'vid/fundo-animado.mp4' %}" type="video/mp4">
+    </video>
+    <header>
+        <a href="{% url 'Home' %}"><img src="{% static 'img/logo-TFlix.svg' %}" alt="Logo da Taick Flix" class="logo"></a>
+        <a href="{% url 'Logout' %}" class="link-logout">Sair</a>
+    </header>
+    <main>
+        <div class="container">
+            <div class="caixa-main">
+                <h1>T-Flix</h1>
+                <p class="descricao">Projeto de plataforma de streamig de filmes e séries</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

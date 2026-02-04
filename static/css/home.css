@@ -1,0 +1,75 @@
+@import url('./fonts.css');
+
+:root{
+    --vid-fundo: url('../vid/fundo-animado.mp4');
+    --fonte-texto: 'Montserrat';
+    --fonte-titulo: 'Zalando Sans Expanded';
+    --branco: white;
+    --verde-escuro: #00B89F;
+    --verde-claro: #50FFB1;
+    --verde-claro-transp: #3faa7a;
+    --cinza-claro: #c2c2c2;
+    --vermelho-erro: #ff4141;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: var(--fonte-texto);
+    min-height: 100vh;
+}
+
+video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1;
+    opacity: 20%;
+}
+
+header{
+    padding: 0 1em;
+    background: linear-gradient(90deg, rgb(24, 56, 56), rgb(30, 87, 66));
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+}
+
+.link-logout{
+    color: var(--branco);
+    text-decoration: none;
+}
+
+main{
+    z-index: 1;
+    height: 100%;
+}
+
+.container{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.caixa-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+h1{
+    font-size: 110px;
+    font-family: var(--fonte-titulo);
+    font-weight: bold;
+    margin-top: 3em;
+}
+

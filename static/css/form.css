@@ -3,6 +3,7 @@
 :root{
     --img-fundo: url('../img/fundo-login.jpg');
     --fonte-texto: 'Montserrat';
+    --fonte-titulo: 'Zalando Sans Expanded';
     --verde-escuro: #00B89F;
     --verde-claro: #50FFB1;
     --verde-claro-transp: #3faa7a;
@@ -23,7 +24,7 @@ body{
 
 h1{
     font-size: 40px;
-    font-family: 'Zalando Sans Expanded';
+    font-family: var(--fonte-titulo);
     margin-bottom: 0.5em;
 }
 
