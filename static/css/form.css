@@ -126,3 +126,8 @@ a{
     color: var(--verde-claro);
     text-decoration: none;
 }
+
+.msg-confirm{
+    font-size: 20px;
+    margin-bottom: 1em;
+}

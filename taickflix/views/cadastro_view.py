@@ -42,7 +42,7 @@ def cadastro_view(request):
 
                 send_mail(
                     'Confirme seu email para se cadastrar na TaickFlix',
-                    f"Clique neste link para confirmar: \n{link}",
+                    f"Acesse o link abaixo para confirmar: \n{link}",
                     'no-reply@taickflix.com',
                     [email],
                 )
